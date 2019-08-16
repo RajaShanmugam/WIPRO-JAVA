@@ -1,0 +1,64 @@
+package vasanth;
+import java.util.*;
+public class encodethreestrings {
+static String a,b,c,out1,out2,out3,f1,f2,f3,s1,s2,s3,l1,l2,l3,x1,x2,x3;
+static void split(String s)
+{
+int le=s.length();
+if (le%3==0)
+{
+int sp=le/3;
+x1=s.substring(0,sp);
+x2=s.substring(sp,(2*sp));
+x3=s.substring(2*sp,le);
+}
+else if(le%3==1)
+{
+int sp=le/3;
+x1=s.substring(0,sp);
+x2=s.substring(sp,(2*sp)+1);
+x3=s.substring((2*sp)+1,le);
+}
+else if (le%3==2)
+{
+int sp=le/3;
+x1=s.substring(0,sp+1);
+x2=s.substring(sp+1,(2*sp)+1);
+x3=s.substring((2*sp)+1,le);
+}
+if (s==a)
+{
+f1=x1;
+f2=x2;
+f3=x3;
+}
+else if(s==b)
+{
+s1=x1;
+s2=x2;
+s3=x3;
+}
+else
+{
+l1=x1;
+l2=x2;
+l3=x3;
+}
+}
+public static void main(String[] args) {
+Scanner sc=new Scanner(System.in);
+a=sc.nextLine();
+b=sc.nextLine();
+c=sc.nextLine();
+split(a);
+split(b);
+split(c);
+
+out1=f1+s2+l3;
+out2=f2+s3+l1;
+out3=f3+s1+l2;
+System.out.println(out1);
+System.out.println(out2);
+System.out.println(out3);
+}
+}
