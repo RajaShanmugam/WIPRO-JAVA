@@ -1,0 +1,53 @@
+package vasanth;
+import java.util.*;
+public class wifi {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String num,name,res="";
+		num=sc.next();
+		name=sc.next();
+		int len=num.length();
+		int a=Integer.parseInt(String.valueOf(num.charAt(0)));
+		int b=Integer.parseInt(String.valueOf(num.charAt(len-1)));
+		int c=a+b;
+		res=res+c+"";
+		switch(b)
+		{
+		case 1:
+			res=res+"!";
+			break;
+		case 2:
+			res=res+"@";
+			break;
+		case 3:
+			res=res+"#";
+			break;
+		case 4:
+			res=res+"$";
+			break;
+		case 5:
+			res=res+"%";
+			break;
+		case 6:
+			res=res+"^";
+			break;
+		case 7:
+			res=res+"&";
+			break;
+		case 8:
+			res=res+"*";
+			break;
+		case 9:
+			res=res+"(";
+			break;
+		case 0:
+			res=res+")";
+			break;
+		}
+		res=res+name.substring(0,(name.length())-1)+num.charAt(1);
+		System.out.println(res);
+		
+	}
+
+}
