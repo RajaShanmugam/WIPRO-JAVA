@@ -1,0 +1,24 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class calctest {
+
+	calc mycalc=new calc();
+	@Test
+	public void test() {
+		assertEquals(30, mycalc.add(15, 15));
+		assertEquals(20, mycalc.add(10, 10));
+		assertEquals(40, mycalc.add(20, 20));
+		assertEquals(50, mycalc.add(15, 35));
+		assertEquals(60, mycalc.add(45, 15));
+	}
+	@Test
+	public void test1() {
+		assertEquals(30, mycalc.mul(6, 5));
+		assertEquals(20, mycalc.mul(10, 2));
+		assertEquals(40, mycalc.mul(20, 2));
+		assertEquals(50, mycalc.mul(10, 5));
+		assertEquals(60, mycalc.mul(15, 4));
+	}
+}
