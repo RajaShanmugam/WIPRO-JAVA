@@ -1,0 +1,90 @@
+import static org.junit.Assert.*;
+
+import java.util.*;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
+
+@RunWith(Parameterized.class)
+public class ParameterizedTestUsingFields {
+	
+	@Parameter(0)
+	public int m1;
+	@Parameter(1)
+	public int m2;
+	@Parameter(2)
+	public int result;
+	
+	@Parameters
+	public static Collection<Object[]>data(){
+		Object[][]data=new Object[][]
+				{
+			{1,2,2},
+			{5,3,15},
+			{5,5,25},
+			{6,3,18}
+			
+				};
+				return Arrays.asList(data);
+	}
+	  @Test
+	    public void testMultiply() {
+	        ToTestClass tester = new ToTestClass();
+	        assertEquals(result, tester.multiply(m1, m2));
+	    }
+	    
+	  		class ToTestClass {
+	        public int multiply(int i, int j) {
+	            return i * j;
+	        }
+	    }
+
+}
+import static org.junit.Assert.*;
+
+import java.util.*;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
+
+@RunWith(Parameterized.class)
+public class ParameterizedTestUsingFields {
+	
+	@Parameter(0)
+	public int m1;
+	@Parameter(1)
+	public int m2;
+	@Parameter(2)
+	public int result;
+	
+	@Parameters
+	public static Collection<Object[]>data(){
+		Object[][]data=new Object[][]
+				{
+			{1,2,2},
+			{5,3,15},
+			{5,5,25},
+			{6,3,18}
+			
+				};
+				return Arrays.asList(data);
+	}
+	  @Test
+	    public void testMultiply() {
+	        ToTestClass tester = new ToTestClass();
+	        assertEquals(result, tester.multiply(m1, m2));
+	    }
+	    
+	  		class ToTestClass {
+	        public int multiply(int i, int j) {
+	            return i * j;
+	        }
+	    }
+
+}
