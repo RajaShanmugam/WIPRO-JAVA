@@ -1,0 +1,69 @@
+package vasanth;
+import java.util.*;
+public class userid {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String fn,ln,small="",longer = "",out="",pin,ne="";
+		int n,i;
+		fn=sc.next();
+		ln=sc.next();
+		pin=sc.next();
+		n=sc.nextInt();
+		int fl=fn.length();
+		int ll=ln.length();
+		if (fl==ll)
+		{
+			for (i=0;i<fl;i++)
+			{
+				char c=fn.charAt(i);
+				char d=ln.charAt(i);
+				int x=(int)c;
+				int y=(int)d;
+				if (x<y)
+				{
+					small=fn;
+					longer=ln;
+					break;
+				}
+				else if (x>y)
+				{
+					small=ln;
+					longer=fn;
+					break;
+				}
+			}
+		}
+		else if (fl>ll)
+		{
+			small=ln;
+			longer=fn;
+		}
+		else if (fl<ll)
+		{
+			small=fn;
+			longer=ln;
+		}
+		out=longer.charAt(0)+small;
+		int len=pin.length();
+		String val=pin.charAt(n-1)+""+pin.charAt(len-n);
+		out=out+val;
+		char c[]=out.toCharArray();
+		for (i=0;i<c.length;i++)
+		{
+		if (Character.isUpperCase(c[i]))
+		{
+			ne=ne+Character.toLowerCase(c[i])+"";
+		}
+		else if (Character.isLowerCase(c[i]))
+		{
+			ne=ne+Character.toUpperCase(c[i])+"";
+		}
+		else
+		{
+			ne+=c[i];
+		}
+		}
+		System.out.println(ne);
+	}
+}
