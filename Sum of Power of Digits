@@ -1,0 +1,19 @@
+package vasanth;
+import java.lang.Math;
+import java.util.*;
+public class Sumofpowerofdigits {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int num,sum,i;
+		num=sc.nextInt();
+		String s=num+"";
+		char ch[]=s.toCharArray();
+		sum=1;
+		for(i=1;i<ch.length;i++)
+		{
+			sum=sum+(int)Math.pow(Character.getNumericValue(ch[i]),Character.getNumericValue(ch[i-1]));
+		}
+		System.out.println(sum);
+	}
+}
