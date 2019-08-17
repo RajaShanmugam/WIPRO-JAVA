@@ -1,0 +1,46 @@
+package vasanth;
+
+import java.util.*;
+
+public class Longestpali {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		String ss,ns;
+		ns="";
+		ArrayList<String> al=new ArrayList<String>();
+		int i,j;
+		for(i=0;i<(s.length())-1;i++)
+		{
+			for(j=i+1;j<s.length();j++)
+			{
+				ss=s.substring(i,j+1);
+				StringBuffer sbf = new StringBuffer(ss); 
+				String srv=sbf.reverse()+"";
+				if(ss.equals(srv))
+				{
+						al.add(ss);
+				}
+			}
+		}
+		int max=0;
+		int le;
+		for(String d:al)
+		{
+			le=d.length();
+			if(le>max)
+			{
+				max=le;
+				
+			}
+		}
+		for(String d:al)
+		{
+			if(d.length()==max)
+			{
+				System.out.println(d);
+			}
+		}	
+	}
+}
