@@ -1,0 +1,45 @@
+package vasanth;
+import java.util.*;
+public class wordsinterchange {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String val,b,d,res;
+		String a=sc.nextLine();
+		String n=sc.next();
+		String[] sl=a.split(" ");
+		char c[]=n.toCharArray();
+		int i,x,y,z;
+		for(i=0;i<c.length;i++)
+		{
+			x=Character.getNumericValue(c[i]);
+			val=sl[x-1];
+			y=val.length();
+			if (y%2==0)
+			{
+				b=val.substring(0,y/2);
+				d=val.substring(y/2,y);
+				StringBuffer sb=new StringBuffer(b);
+				StringBuffer sb2=new StringBuffer(d);
+				res=sb.reverse()+""+sb2;
+				System.out.print(res+" ");
+			}
+			else
+			{
+				b=val.substring(0,(y/2)+1);
+				d=val.substring(y/2,y);
+				StringBuffer sb=new StringBuffer(b);
+				StringBuffer sb2=new StringBuffer(d);
+				if (b.equals(d))
+				{
+					res=b;
+				}
+				else
+				{
+					res=sb.reverse()+""+sb2;
+				}
+				System.out.print(res+" ");
+			}	
+		}
+	}
+}
