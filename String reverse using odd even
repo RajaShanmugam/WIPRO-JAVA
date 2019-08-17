@@ -1,0 +1,26 @@
+package vasanth;
+import java.util.*;
+public class stringoddeven {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String a=sc.next();
+		String x="",y="",z="";
+		int len=a.length();
+		if (len%2==0)
+		{
+			x=a.substring(0,len/2);
+			y=a.substring(len/2,len);
+			z="";
+		}
+		else if (len%2!=0)
+		{
+			x=a.substring(0,len/2);
+			y=a.substring((len/2)+1,len);
+			z=a.substring(len/2,(len/2)+1);
+		}
+		StringBuffer sbf=new StringBuffer(x);
+		StringBuffer sbf2=new StringBuffer(y);
+		String res=sbf.reverse()+z+sbf2.reverse();
+		System.out.println(res);
+	}
+}
