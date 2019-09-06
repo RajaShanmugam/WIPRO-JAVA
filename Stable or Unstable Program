@@ -1,0 +1,73 @@
+package kar;
+import java.util.*;
+public class stable {
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+int inp;
+int i,rem,j,k;
+Scanner sc=new Scanner(System.in);
+inp=sc.nextInt();
+List<Integer> al=new ArrayList<Integer>();
+List<Integer> stab=new ArrayList<Integer>();
+List <Integer>unstab=new ArrayList<Integer>();
+int arr[]={0,0,0,0,0,0,0,0,0,0};
+int ele[]= new int[inp];
+for(i=0;i<inp;i++)
+{
+	ele[i]=sc.nextInt();
+}
+for (i=0;i<ele.length;i++)
+{
+	int x=ele[i];
+	/*System.out.println(x);*/
+	int val=x;
+	while(x>0)
+	{
+		rem=x%10;
+		arr[rem]+=1;
+		x/=10;
+	}
+	for(j=0;j<arr.length;j++)
+	{
+		if (arr[j]>0)
+		{
+			al.add(arr[j]);
+			arr[j]=0;
+		}
+	}
+	/*System.out.println(al);*/
+	int flag=0;
+	for(j=1;j<=al.size()-1;j++)
+	{
+		if(al.get(0)!=al.get(j))
+		{
+			flag=1;
+			break;
+		}
+	}
+	/*System.out.println(flag);*/
+	if (flag==0)
+	{
+		stab.add(val);
+	}
+	else
+	{
+		unstab.add(val);
+	}
+	al.clear();
+}
+System.out.println(stab);
+System.out.println(unstab);
+int sum=0,sum2=0;
+for(k=0;k<stab.size();k++)
+{
+	sum+=stab.get(k);
+}
+for(k=0;k<unstab.size();k++)
+{
+	sum2+=unstab.get(k);
+}
+System.out.println(sum-sum2);
+}
+}
