@@ -1,0 +1,56 @@
+import java.util.*;
+public class smallest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int a,b,c,d,e,sum=0;
+		a=sc.nextInt();
+		b=sc.nextInt();
+		c=sc.nextInt();
+		d=sc.nextInt();
+		e=sc.nextInt();
+		String v,w,x,y,z,ne="";
+		
+		v=Integer.toString(a);
+		w=Integer.toString(b);
+		x=Integer.toString(c);
+		y=Integer.toString(d);
+		z=Integer.toString(e);
+		
+		char temp1[]=v.toCharArray();
+		char temp2[]=w.toCharArray();
+		char temp3[]=x.toCharArray();
+		char temp4[]=y.toCharArray();
+		char temp5[]=z.toCharArray();
+		
+		Arrays.sort(temp1);
+		Arrays.sort(temp2);
+		Arrays.sort(temp3);
+		Arrays.sort(temp4);
+		Arrays.sort(temp5);
+		
+		ne=Character.getNumericValue(temp1[0])+""+Character.getNumericValue(temp1[1]);
+		sum+=Integer.parseInt(ne);
+		ne="";
+		
+		ne=Character.getNumericValue(temp2[0])+""+Character.getNumericValue(temp2[1]);
+		sum+=Integer.parseInt(ne);
+		ne="";
+		
+		ne=Character.getNumericValue(temp3[0])+""+Character.getNumericValue(temp3[1]);
+		sum+=Integer.parseInt(ne);
+		ne="";
+		
+		ne=Character.getNumericValue(temp4[0])+""+Character.getNumericValue(temp4[1]);
+		sum+=Integer.parseInt(ne);
+		ne="";
+		
+		ne=Character.getNumericValue(temp5[0])+""+Character.getNumericValue(temp5[1]);
+		sum+=Integer.parseInt(ne);
+		ne="";
+		
+		System.out.println(sum);
+	}
+
+}
