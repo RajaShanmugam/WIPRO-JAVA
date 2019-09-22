@@ -1,0 +1,50 @@
+import java.util.*;
+public class number {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int a,b,c;
+		String x,y,z,ne="";
+		a=sc.nextInt();
+		b=sc.nextInt();
+		c=sc.nextInt();
+		List al=new ArrayList();
+		int sum=0;
+		x=Integer.toString(a);
+		y=Integer.toString(b);
+		z=Integer.toString(c);
+		char temp1[]=x.toCharArray();
+		char temp2[]=y.toCharArray();
+		char temp3[]=z.toCharArray();
+		Arrays.sort(temp1);
+		Arrays.sort(temp2);
+		Arrays.sort(temp3);
+		x = new String(temp1);
+		y = new String(temp2);
+		z = new String(temp3);
+		int le1=x.length();
+		int le2=y.length();
+		int le3=z.length();
+		if(temp1.length>=3)
+		{
+			ne=Character.getNumericValue(temp1[le1-1])+""+Character.getNumericValue(temp1[le1-2])+""+Character.getNumericValue(temp1[le1-3]);
+			sum+=Integer.parseInt(ne);
+			ne="";
+		}
+		if(temp2.length>=3)
+		{
+			ne=Character.getNumericValue(temp2[le2-1])+""+Character.getNumericValue(temp2[le2-2])+""+Character.getNumericValue(temp2[le2-3]);
+			sum+=Integer.parseInt(ne);
+			ne="";
+		}
+		if(temp3.length>=3)
+		{
+			ne=Character.getNumericValue(temp3[le3-1])+""+Character.getNumericValue(temp3[le3-2])+""+Character.getNumericValue(temp3[le3-3]);
+			sum+=Integer.parseInt(ne);
+			ne="";
+		}
+		System.out.println(sum);
+	}
+
+}
