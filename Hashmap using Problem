@@ -1,0 +1,62 @@
+import java.util.*;
+public class findvalues {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		int n,i;
+		n=sc.nextInt();
+		int flag=0;
+		
+		String arr[]= {"aa","bb","cc","dd","ee","ff","gg"};
+		int num_arr[]= {9,89,5,0,6,65,4};
+		
+		HashMap<Integer,String> hm=new HashMap<>();
+		List al=new ArrayList();
+		
+		for(i=0;i<n;i++)
+		{
+			hm.put(num_arr[i], arr[i]);
+		}
+		
+		for(i=0;i<n-1;i++)
+		{
+			al.add(num_arr[i]);
+			for(int j=i+1;j<n;j++)
+			{
+				if((Math.abs(num_arr[i]-num_arr[j])==1)||(Math.abs(num_arr[i]-num_arr[j])==2))
+						{
+							al.add(num_arr[j]);
+						}
+				if(al.size()==3)
+				{
+					flag=1;
+					break;
+				}
+			}
+			if(flag==1)
+			{
+				break;
+			}
+			if(al.size()!=3)
+			{
+				al.clear();
+			}
+		}
+		Collections.sort(al,Collections.reverseOrder());//reversing the array
+		
+		System.out.println(al);
+		
+		String res="";
+		res+=hm.get(al.get(0))+":"+hm.get(al.get(1))+":"+hm.get(al.get(2));
+		
+		if(al.size()==0)
+		{
+			System.out.println("None");
+		}
+		else
+		{
+			System.out.println(res);
+		}
+	}
+}
