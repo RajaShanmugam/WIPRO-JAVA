@@ -1,0 +1,31 @@
+import java.util.*;
+public class increment {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int ip1,value,ip3;
+		ip1=sc.nextInt();
+		value=sc.nextInt();
+		ip3=sc.nextInt();
+		
+		int i,sum=0;
+		
+		int n=ip1*2;
+		
+		sum+=value;
+		
+		for(i=3;i<n;i=i+2)
+		{
+			int val=value+ip3;
+			
+			int n1=i/2;
+			sum+=(n1*value);
+			
+			int n2=i-n1;
+			sum+=(n2*val);
+			
+			value=val;
+		}
+		System.out.println(sum);
+	}
+}
