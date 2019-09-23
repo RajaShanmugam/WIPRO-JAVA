@@ -9,7 +9,6 @@ public class number {
 		a=sc.nextInt();
 		b=sc.nextInt();
 		c=sc.nextInt();
-		List al=new ArrayList();
 		int sum=0;
 		x=Integer.toString(a);
 		y=Integer.toString(b);
